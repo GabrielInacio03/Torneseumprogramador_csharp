@@ -8,18 +8,31 @@ namespace Fundamentos
 {
     internal class Program
     {
+        static int Calcular()
+        {
+            int a = 1;
+            int b = 2;
+            int c = a + b;
+            return c ;
+        }
+        public static void MostrarMensagemNaTela()
+        {
+            Console.WriteLine("Ola Mundo");
+        }
+        public static void Tabuada(int numero)
+        {
+            Console.WriteLine("=========================================");
+            for (int i = 0; i <= 10; i++) 
+            {
+                Console.WriteLine($"{numero} X {i} = {numero * i}");
+            }
+            Console.WriteLine("=========================================");
+        }
         static void Main(string[] args)
         {
-            string[] a = new string[3];
-            a[0] = "Danilo";
-            a[1] = "Sheila";
-            a[2] = "Lana";
-
-            Array.Sort(a); 
-            foreach (string nome in a) 
-            {
-                Console.WriteLine(nome);
-            }
+            MostrarMensagemNaTela();
+            Console.WriteLine(Calcular());
+            Tabuada(2);
             Console.ReadLine();
         }
     }
