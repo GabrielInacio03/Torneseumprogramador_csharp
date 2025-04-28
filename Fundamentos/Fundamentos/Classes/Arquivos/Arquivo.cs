@@ -12,10 +12,10 @@ namespace Fundamentos.Classes.Arquivos
         public static void LerArquivo(string nomeArquivo, int numArquivo)
         {
             Console.WriteLine("=========================================");
-
-            if (File.Exists(nomeArquivo))
+            string path = nomeArquivo + $"arq{numArquivo}.txt";
+            if (File.Exists(path))
             {
-                string path = nomeArquivo + $"arq{numArquivo}.txt";
+                
                 using (StreamReader arquivo = File.OpenText(path))
                 {
                     string linha;
