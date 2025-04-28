@@ -11,31 +11,47 @@ namespace Fundamentos
     internal class Program
     {
         public const string NOME_PROGRAMA = "Torne se um Programador";
-        static int Calcular()
+        public const int SAIR_PROGRAMA = 0;
+        public const int TABUADA = 1;
+        public const int CALCULO_MEDIA = 2;
+        public const int LER_ARQUIVOS = 3;
+        static int CalcularMedia()
         {
-            int a = 1;
-            int b = 2;
-            int c = a + b;
-            return c ;
+            Console.WriteLine("Digite o valor de três notas");
+            Console.WriteLine("Valor nota 1:");
+            int v1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Valor nota 2:");
+            int v2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Valor nota 3:");
+            int v3 = int.Parse(Console.ReadLine());
+
+            int totalNotas = v1 + v2 + v3;
+            var media = totalNotas / 3;
+            return media;
         }
         public static void MostrarMensagemNaTela()
         {
             Console.WriteLine("=========================================");
             Console.WriteLine($"Bem Vindo ao {NOME_PROGRAMA}");
             Console.WriteLine("Veja as opções no menu abaixo");
-            Console.WriteLine("=========================================");
         }
-        public static void Tabuada(int numero)
+        public static void Tabuada()
         {
             Console.WriteLine("=========================================");
+            Console.WriteLine("Informe o valor da tabuada desejada:");
+            int valor = int.Parse(Console.ReadLine());
+
             for (int i = 0; i <= 10; i++) 
             {
-                Console.WriteLine($"{numero} X {i} = {numero * i}");
+                Console.WriteLine($"{valor} X {i} = {valor * i}");
             }
-            Console.WriteLine("=========================================");
         }
         public static void LerArquivo(string nomeArquivo, int numArquivo)
         {
+            Console.WriteLine("=========================================");
+
             if (File.Exists(nomeArquivo)) 
             {
                 string path = nomeArquivo + $"arq{numArquivo}.txt";
@@ -60,41 +76,51 @@ namespace Fundamentos
             }
 
         }
-        static void Main(string[] args)
+        public static void Menu()
         {
             MostrarMensagemNaTela();
-            int opcao = 1;
-            while (opcao != 0) 
+
+            while (true)
             {
                 Console.WriteLine("=========================================");
-                Console.WriteLine("MENU: ");
-                Console.WriteLine("0 - Sair do Programa");
-                Console.WriteLine("1 - Tabuada");
-                Console.WriteLine("2 - Calcular");
-                Console.WriteLine("3 - LerArquivo");
+                string menu = "MENU:" +
+                    "\n     0 - Sair do Programa" +
+                    "\n     1 - Tabuada" +
+                    "\n     2 - Calcular Média" +
+                    "\n     3 - LerArquivos";
 
-                opcao = int.Parse(Console.ReadLine());
+                Console.WriteLine(menu);
+                int opcao = int.Parse(Console.ReadLine());
 
-                switch (opcao)
+                if (opcao == SAIR_PROGRAMA)
                 {
-                    case 0:
-                        Console.WriteLine("saindo...");
-                        break;
-                    case 1:
-                        Tabuada(5);
-                        break;
-                    case 2:
-                        Calcular();
-                        break;
-                    case 3:
-                        LerArquivo(@"C:\workspace_pessoal\arquivos\", 1);
-                        break;
-                    default:
-                        Console.WriteLine("Opção não valida");
-                        break;
+                    Console.WriteLine("saindo...");
+                    break;
+                }
+                else if (opcao == TABUADA)
+                {
+                    Tabuada();
+                }
+                else if (opcao == CALCULO_MEDIA)
+                {
+                    var media = CalcularMedia();
+                    Console.WriteLine($"o valor final da sua média foi de {media}");
+                }
+                else if (opcao == LER_ARQUIVOS)
+                {
+                    LerArquivo(@"C:\workspace_pessoal\arquivos\", 1);
+                }
+                else
+                {
+                    Console.WriteLine("Opção não válida");
                 }
 
             }
+        }
+        static void Main(string[] args)
+        {
+
+            Menu();
             Console.ReadLine();
         }
     }
