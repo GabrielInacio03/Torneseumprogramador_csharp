@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Arquivos\Arquivo.cs" />
+    <Compile Include="Classes\Calculo\Media.cs" />
+    <Compile Include="Classes\Tabs\Tabuada.cs" />
+    <Compile Include="Classes\Tela\MenuInicial.cs" />
+    <Compile Include="Classes\Tela\TelaInicial.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
