@@ -10,6 +10,7 @@ namespace Fundamentos
 {
     internal class Program
     {
+        public const string NOME_PROGRAMA = "Torne se um Programador";
         static int Calcular()
         {
             int a = 1;
@@ -19,7 +20,10 @@ namespace Fundamentos
         }
         public static void MostrarMensagemNaTela()
         {
-            Console.WriteLine("Ola Mundo");
+            Console.WriteLine("=========================================");
+            Console.WriteLine($"Bem Vindo ao {NOME_PROGRAMA}");
+            Console.WriteLine("Veja as opções no menu abaixo");
+            Console.WriteLine("=========================================");
         }
         public static void Tabuada(int numero)
         {
@@ -59,9 +63,38 @@ namespace Fundamentos
         static void Main(string[] args)
         {
             MostrarMensagemNaTela();
-            Console.WriteLine(Calcular());
-            Tabuada(2);
-            LerArquivo(@"C:\workspace_pessoal\arquivos\", 1);
+            int opcao = 1;
+            while (opcao != 0) 
+            {
+                Console.WriteLine("=========================================");
+                Console.WriteLine("MENU: ");
+                Console.WriteLine("0 - Sair do Programa");
+                Console.WriteLine("1 - Tabuada");
+                Console.WriteLine("2 - Calcular");
+                Console.WriteLine("3 - LerArquivo");
+
+                opcao = int.Parse(Console.ReadLine());
+
+                switch (opcao)
+                {
+                    case 0:
+                        Console.WriteLine("saindo...");
+                        break;
+                    case 1:
+                        Tabuada(5);
+                        break;
+                    case 2:
+                        Calcular();
+                        break;
+                    case 3:
+                        LerArquivo(@"C:\workspace_pessoal\arquivos\", 1);
+                        break;
+                    default:
+                        Console.WriteLine("Opção não valida");
+                        break;
+                }
+
+            }
             Console.ReadLine();
         }
     }
