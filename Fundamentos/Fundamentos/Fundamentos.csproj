@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Classes\Arquivos\Arquivo.cs" />
     <Compile Include="Classes\Calculo\Media.cs" />
+    <Compile Include="Classes\Cliente.cs" />
     <Compile Include="Classes\Tabs\Tabuada.cs" />
     <Compile Include="Classes\Tela\MenuInicial.cs" />
     <Compile Include="Classes\Tela\TelaInicial.cs" />
