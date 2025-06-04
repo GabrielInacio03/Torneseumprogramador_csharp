@@ -17,6 +17,7 @@ namespace Fundamentos.Classes.Tela
         public const int CALCULO_MEDIA = 2;
         public const int LER_ARQUIVOS = 3;
         public const int LER_ARQUIVOS_CLIENTE = 4;
+        public const int CADASTRAR_CLIENTE = 5;
 
         public static void Menu()
         {
@@ -30,7 +31,8 @@ namespace Fundamentos.Classes.Tela
                     "\n     1 - Tabuada" +
                     "\n     2 - Calcular Média" +
                     "\n     3 - LerArquivos" +
-                    "\n     4 - Ler Base Clientes";
+                    "\n     4 - Ler Base Clientes "+
+                    "\n     5 - Cadastrar Cliente";
 
                 Console.WriteLine(menu);
                 int opcao = int.Parse(Console.ReadLine());
@@ -58,9 +60,24 @@ namespace Fundamentos.Classes.Tela
                     var lista = Cliente.LerClientes();
                     foreach (var item in lista)
                     {
-                        Console.WriteLine($"Cliente: {item.Nome} - {item.Telefone} - {item.CPF}");
+                        //Console.WriteLine($"Cliente: {item.Nome} - {item.Telefone} - {item.CPF}");
                         Console.WriteLine();
                     }
+                } else if (opcao == CADASTRAR_CLIENTE)
+                {
+                    Console.WriteLine("=========================================");
+                    Console.WriteLine("Digite o nome desejado: ");
+                    string nomeCliente = Console.ReadLine();
+
+                    Console.WriteLine("Digite o telefone desejado: ");
+                    string telefoneCliente = Console.ReadLine();
+
+                    Console.WriteLine("Digite o cpf desejado: ");
+                    string cpfCliente = Console.ReadLine();
+
+                    Cliente clienteSalvar = new Cliente(nomeCliente, telefoneCliente, cpfCliente);
+                    clienteSalvar.Gravar();
+                    Console.WriteLine("Cliente Salvo com Sucesso!");
                 }
                 else
                 {
