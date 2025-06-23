@@ -1,11 +1,12 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioPOO.Models
+namespace Desafio21DiasCsharpOO.Models
 {
-    public class Pessoa
+    internal class Pessoa
     {
         //public long Id; não é uma propriedade, é apenas uma atributo simples
         public long Id { get; set; } //Propriedade

@@ -1,7 +1,7 @@
 ﻿using System;
-using DesafioPOO.Models;
+using Desafio21DiasCsharpOO.Models;
 
-namespace DesafioPOO
+namespace Desafio21DiasCsharpOO
 {
     internal class Program
     {
@@ -25,6 +25,16 @@ namespace DesafioPOO
             maria.Id = 2;
             maria.Nome = "Maria";
             maria.Endereco = "Brasil, rua 8910";
+
+            List<Pessoa> pessoas = new List<Pessoa>();
+            pessoas.Add(marcos);
+            pessoas.Add(maria);
+            pessoas.Add(gabriel);
+
+            foreach (var pessoa in pessoas)
+            {
+                Console.WriteLine($"Pessoa: {pessoa.Nome}");
+            }
         }
     }
 }

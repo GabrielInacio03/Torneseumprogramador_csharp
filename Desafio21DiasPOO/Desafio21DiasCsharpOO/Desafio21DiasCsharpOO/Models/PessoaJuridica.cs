@@ -1,11 +1,12 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioPOO.Models
+namespace Desafio21DiasCsharpOO.Models
 {
-    public class PessoaJuridica : Pessoa
+    internal class PessoaJuridica : Pessoa
     {
         public string Cnpj;
         public string InscricaoEstadual;
