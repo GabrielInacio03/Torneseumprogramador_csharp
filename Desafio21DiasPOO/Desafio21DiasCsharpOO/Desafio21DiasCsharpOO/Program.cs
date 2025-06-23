@@ -11,21 +11,10 @@ namespace Desafio21DiasCsharpOO
             Console.WriteLine("Desafio 21 dias de orientação a objetos!");
             Console.WriteLine("========================================");
 
-            Pessoa gabriel = new Pessoa();
-            gabriel.Id = 1;
-            gabriel.Nome = "Gabriel";
-            gabriel.Endereco = "Brasil, rua 1234";
-
-            Pessoa marcos = new Pessoa();
-            marcos.Id = 2;
-            marcos.Nome = "Marcos";
-            marcos.Endereco = "Brasil, rua 567";
-
-            Pessoa maria = new Pessoa();
-            maria.Id = 2;
-            maria.Nome = "Maria";
-            maria.Endereco = "Brasil, rua 8910";
-
+            Pessoa gabriel = new Pessoa(1, "Gabriel", "Brasil, rua 1234");
+            Pessoa marcos = new Pessoa(2, "Marcos", "Brasil, rua 567");
+            Pessoa maria = new Pessoa(3, "Maria", "Brasil, rua 8910");
+           
             List<Pessoa> pessoas = new List<Pessoa>();
             pessoas.Add(marcos);
             pessoas.Add(maria);
@@ -35,6 +24,9 @@ namespace Desafio21DiasCsharpOO
             {
                 Console.WriteLine($"Pessoa: {pessoa.Nome}");
             }
+
+
+            PessoaFisica pe = new PessoaFisica(1, "Gabriel", "Brasil, rua 1234", "13213231","123132131");
         }
     }
 }

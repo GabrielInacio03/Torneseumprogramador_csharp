@@ -8,13 +8,8 @@ namespace Desafio21DiasCsharpOO.Models
 {
     internal class Pessoa
     {
-        //public long Id; não é uma propriedade, é apenas uma atributo simples
         public long Id { get; set; } //Propriedade
-
-        //public string Nome; //não é uma propriedade, é apenas uma atributo simples
         public string Nome { get; set; } //Propriedade
-
-        //public string Endereco; //não é uma propriedade, é apenas uma atributo simples
         public string Endereco { get; set; }//Propriedade
         public Pessoa() { }
 
